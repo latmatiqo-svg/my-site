@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTIDIAN — Equipment for Stretch Ceiling Production</title>
+<meta name="description" content="ARTIDIAN — European manufacturer of equipment for stretch ceiling production. Athens, Greece. Worldwide delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%231a1a1a'/><rect x='3' y='4' width='4' height='2' fill='white'/><rect x='3' y='9' width='7' height='4' fill='white'/><rect x='11' y='4' width='2' height='9' fill='white'/></svg>">
+<style>
+:root{
+  --text:#111; --muted:#555; --primary:#2a52be; --primary-hover:#1a3a99;
+  --accent:#ff6a00; --border:rgba(0,0,0,.1); --radius:12px;
+  --shadow:0 8px 24px rgba(0,0,0,.1);
+  --font:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+  --pixel:'Press Start 2P','Manrope',monospace;
+  --card-bg:rgba(255,255,255,.85);
+  --bg-overlay:rgba(253,251,247,.7);
+}
+[data-theme="dark"]{
+  --text:#f5f5f5; --muted:#aaa; --border:rgba(255,255,255,.15);
+  --card-bg:rgba(30,30,35,.85);
+  --bg-overlay:rgba(15,15,20,.75);
+  --primary:#6b8fff; --primary-hover:#4a6fe0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ============ ANIMATED MULTI-COLOR SHIMMERING BACKGROUND ============ */
+body{
+  font-family:var(--font);
+  color:var(--text);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  min-height:100vh;
+  overflow-x:hidden;
+  transition:color .4s;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-50%;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%, #ff9a9e 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, #a1c4fd 0%, transparent 40%),
+    radial-gradient(circle at 30% 80%, #fbc2eb 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, #c2e9fb 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #ffecd2 0%, transparent 50%),
+    linear-gradient(-45deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb,#fbc2eb,#a6c1ee,#ffd3a5,#fd6585);
+  background-size:200% 200%,200% 200%,200% 200%,200% 200%,200% 200%,400% 400%;
+  animation:meshFlow 20s ease-in-out infinite, gradientShift 15s ease infinite, hueSpin 30s linear infinite;
+  filter:blur(60px) saturate(1.3);
+  opacity:.9;
+}
+[data-theme="dark"] body::before{
+  filter:blur(80px) saturate(1.1) brightness(.5);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:var(--bg-overlay);
+  backdrop-filter:blur(2px);
+  transition:background .4s;
+}
+@keyframes meshFlow{
+  0%,100%{background-position:0% 0%,100% 0%,0% 100%,100% 100%,50% 50%,0% 50%}
+  25%{background-position:100% 50%,0% 20%,50% 0%,0% 80%,100% 50%,100% 50%}
+  50%{background-position:100% 100%,0% 100%,100% 0%,0% 0%,50% 50%,0% 50%}
+  75%{background-position:0% 100%,100% 80%,50% 100%,100% 20%,0% 50%,100% 50%}
+}
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes hueSpin{
+  0%{filter:blur(60px) saturate(1.3) hue-rotate(0deg)}
+  100%{filter:blur(60px) saturate(1.3) hue-rotate(360deg)}
+}
+
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none;color:inherit}
+.container{width:min(100%,1050px);margin:0 auto;padding:0 20px}
+
+/* ============ PIXEL ICON ============ */
+.pixel{width:1em;height:1em;image-rendering:pixelated;shape-rendering:crispEdges;vertical-align:-.15em;fill:currentColor}
+.pixel-lg{font-size:1.5rem}
+.pixel-xl{font-size:2rem}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(255,106,0,.5)}50%{box-shadow:0 0 0 12px rgba(255,106,0,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+@keyframes toastIn{from{opacity:0;transform:translateX(100%)}to{opacity:1;transform:translateX(0)}}
+@keyframes toastOut{to{opacity:0;transform:translateX(100%)}}
+@keyframes slideRight{from{width:0}to{width:100%}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes cardFlip{from{transform:rotateY(0)}to{transform:rotateY(180deg)}}
+
+.anim-fadeup{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.anim-fadeup.visible{opacity:1;transform:translateY(0)}
+
+/* ============ SCROLL PROGRESS ============ */
+.scroll-progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#ff9a9e,#fbc2eb,#a1c4fd,#fd6585);z-index:999;transition:width .1s;border-radius:0 2px 2px 0;box-shadow:0 0 10px rgba(255,106,0,.6)}
+
+/* ============ HEADER ============ */
+header{position:sticky;top:0;background:var(--card-bg);z-index:100;padding:12px 0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .3s,background .4s;border-bottom:1px solid var(--border)}
+header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.3rem;letter-spacing:2px;text-transform:lowercase;transition:transform .3s}
+.logo:hover{transform:scale(1.03)}
+.logo:hover .logo-mark{animation:spin 1s ease}
+.logo-mark{width:34px;height:34px;flex-shrink:0}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{background:rgba(0,0,0,.05);width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:1.05rem;transition:all .2s;position:relative;color:var(--text)}
+[data-theme="dark"] .icon-btn{background:rgba(255,255,255,.1)}
+.icon-btn:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+.icon-btn.active{background:var(--primary);color:#fff}
+.badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 5px;animation:pulse 2s infinite}
+.burger{display:flex;flex-direction:column;gap:5px;padding:10px}
+.burger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s;border-radius:2px}
+.burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ NAV ============ */
+nav{position:fixed;inset:0;background:var(--card-bg);backdrop-filter:blur(20px);z-index:99;display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
+nav.open{opacity:1;pointer-events:auto}
+nav ul{display:flex;flex-direction:column;gap:18px;text-align:center;padding:0 20px;width:100%}
+nav a{font-weight:500;font-size:1.4rem;display:block;padding:8px 0;transition:all .2s;position:relative}
+nav a:hover{color:var(--primary);transform:translateX(6px)}
+.socials{position:absolute;bottom:40px;display:flex;gap:22px}
+.socials a{width:30px;height:30px;color:var(--primary);transition:transform .2s}
+.socials a:hover{transform:scale(1.2) rotate(-5deg)}
+.socials svg{width:100%;height:100%;fill:currentColor}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--primary);color:#fff;padding:14px 26px;font-size:1rem;font-weight:600;border-radius:var(--radius);transition:all .25s;text-align:center;position:relative;overflow:hidden;box-shadow:0 4px 14px rgba(42,82,190,.25)}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s}
+.btn:hover::before{transform:translateX(100%)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(42,82,190,.35)}
+.btn:active{transform:translateY(-1px)}
+.btn-outline{background:transparent;border:2px solid var(--text);color:var(--text);box-shadow:none}
+.btn-outline:hover{background:var(--text);color:var(--bg-overlay);box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.btn-accent{background:var(--accent);box-shadow:0 4px 14px rgba(255,106,0,.35);animation:glow 3s infinite}
+.btn-accent:hover{background:#e55f00}
+.btn-block{width:100%}
+.btn-ghost{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-sm{padding:8px 14px;font-size:.85rem}
+
+/* ============ HERO ============ */
+.hero{padding:50px 0 60px;text-align:center;position:relative}
+.hero-top{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;margin-bottom:30px;flex-wrap:wrap;gap:10px;animation:fadeIn .8s}
+.hero-top a{font-weight:700;color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:2px;transition:all .2s;display:flex;align-items:center;gap:6px}
+.hero-top a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,8vw,4.2rem);font-weight:800;line-height:1.05;margin-bottom:15px;letter-spacing:-1.5px;background:linear-gradient(120deg,var(--text) 0%,var(--primary) 50%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:gradientShift 6s ease infinite}
+.hero p{font-size:1.1rem;color:var(--muted);margin-bottom:25px;max-width:620px;margin-left:auto;margin-right:auto;animation:fadeUp .8s .2s both}
+.hero-price{font-size:2.1rem;font-weight:800;margin-bottom:28px;color:var(--primary);animation:fadeUp .8s .3s both}
+.hero-price small{font-size:.9rem;color:var(--muted);font-weight:500;display:block;margin-top:6px}
+.hero-image{margin-bottom:30px;position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);animation:scaleIn 1s .4s both;transition:transform .5s}
+.hero-image:hover{transform:perspective(900px) rotateY(-2deg) rotateX(1deg) scale(1.01)}
+.hero-image img{width:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .8s}
+.hero-image:hover img{transform:scale(1.04)}
+.hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,.25) 50%,transparent 60%);transform:translateX(-100%);transition:transform .8s}
+.hero-image:hover::after{transform:translateX(100%)}
+.hero-actions{display:flex;flex-direction:column;gap:12px;align-items:center;animation:fadeUp .8s .5s both}
+
+/* TYPING */
+.typing{overflow:hidden;white-space:nowrap;border-right:3px solid var(--accent);animation:blink .8s infinite;display:inline-block}
+
+/* ============ SECTION ============ */
+.section{padding:60px 0;position:relative}
+.section-title{font-size:1.55rem;font-weight:800;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:12px}
+.section-title .pixel{color:var(--accent);font-size:1.3rem}
+.section-sub{color:var(--muted);margin-bottom:26px;font-size:.98rem}
+.section-card{background:var(--card-bg);border-radius:var(--radius);padding:40px 28px;box-shadow:var(--shadow);backdrop-filter:blur(14px);border:1px solid var(--border);transition:background .4s}
+
+/* ============ STATS ============ */
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:20px}
+.stat-card{background:var(--card-bg);border-radius:var(--radius);padding:22px 18px;text-align:center;box-shadow:var(--shadow);backdrop-filter:blur(14px);border:1px solid var(--border);transition:transform .3s;animation:fadeUp .6s both}
+.stat-card:hover{transform:translateY(-5px) scale(1.02)}
+.stat-num{font-size:2rem;font-weight:800;color:var(--primary);line-height:1}
+.stat-label{font-size:.82rem;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:1px}
+
+/* ============ ADVANTAGES ============ */
+.advantages-list{display:flex;flex-direction:column;gap:10px}
+.advantage-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);font-weight:500;backdrop-filter:blur(10px);transition:all .3s;animation:slideInLeft .5s both}
+.advantage-item:nth-child(2){animation-delay:.05s}
+.advantage-item:nth-child(3){animation-delay:.1s}
+.advantage-item:nth-child(4){animation-delay:.15s}
+.advantage-item:nth-child(5){animation-delay:.2s}
+.advantage-item:nth-child(6){animation-delay:.25s}
+.advantage-item:nth-child(7){animation-delay:.3s}
+.advantage-item:nth-child(8){animation-delay:.35s}
+.advantage-item:hover{transform:translateX(8px) scale(1.01);border-color:var(--primary);box-shadow:0 8px 20px rgba(42,82,190,.15)}
+.advantage-item .pixel{color:var(--primary);font-size:1.2rem;flex-shrink:0}
+
+/* ============ CALCULATOR ============ */
+.calculator{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+.calculator h3{font-size:1.15rem;margin-bottom:16px;color:var(--primary)}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);gap:15px;flex-wrap:wrap}
+.calc-row:last-of-type{border-bottom:none}
+.calc-row label{font-weight:500;flex:1;min-width:160px;font-size:.92rem}
+.calc-row input[type=range]{flex:2;min-width:130px;accent-color:var(--primary);cursor:pointer}
+.calc-row output{font-weight:700;color:var(--primary);min-width:80px;text-align:right;font-variant-numeric:tabular-nums}
+.calc-result{margin-top:20px;padding:18px;background:linear-gradient(135deg,rgba(42,82,190,.12),rgba(255,106,0,.12));border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border:1px solid rgba(42,82,190,.2)}
+.calc-result span{font-size:.95rem;color:var(--muted)}
+.calc-result strong{font-size:1.5rem;color:var(--primary);font-variant-numeric:tabular-nums}
+
+/* ============ FILTERS ============ */
+.filters{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:22px}
+.search-bar{position:relative}
+.search-bar input{width:100%;padding:13px 44px 13px 42px;border:1px solid var(--border);border-radius:var(--radius);font-size:.95rem;background:var(--card-bg);backdrop-filter:blur(10px);transition:border-color .2s;color:var(--text);font-family:inherit}
+.search-bar input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(42,82,190,.15)}
+.search-bar .pixel{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1.1rem;pointer-events:none}
+.sort-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sort-row select{padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card-bg);font-family:inherit;color:var(--text);cursor:pointer;backdrop-filter:blur(10px)}
+
+/* ============ CATALOG ============ */
+.catalog-grid{display:grid;grid-template-columns:1fr;gap:22px}
+.product-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:all .35s cubic-bezier(.2,.9,.3,1.2);backdrop-filter:blur(14px);animation:fadeUp .6s both;position:relative}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.15)}
+.product-image{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,rgba(255,154,158,.4),rgba(161,196,253,.4));overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.product-card:hover .product-image img{transform:scale(1.08) rotate(-1deg)}
+.badge{position:absolute;top:12px;right:12px;background:var(--accent);color:#fff;padding:5px 11px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;z-index:2;animation:pulse 2.5s infinite}
+.badge.new{background:#16a34a}
+.badge.hit{background:#e11d48}
+.wish-btn{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;transition:all .2s;font-size:1rem;color:#666;z-index:2}
+.wish-btn:hover{background:#fff;transform:scale(1.1)}
+.wish-btn.active{color:#e11d48;background:#fff}
+.wish-btn.active svg{fill:#e11d48;animation:pulse .6s}
+.product-info{padding:18px;display:flex;flex-direction:column;flex:1}
+.product-info h3{font-size:1.18rem;margin-bottom:6px}
+.product-info p{color:var(--muted);font-size:.9rem;margin-bottom:12px;flex:1}
+.product-price{font-size:1.25rem;font-weight:800;margin-bottom:14px;color:var(--primary)}
+.product-price s{font-size:.85rem;color:var(--muted);font-weight:400;margin-left:8px}
+.product-actions{display:flex;gap:8px;flex-wrap:wrap}
+.product-actions .btn{flex:1;padding:10px 14px;font-size:.88rem;min-width:100px}
+.product-rating{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:.8rem;color:var(--muted)}
+.stars{color:#fbbf24;letter-spacing:1px}
+.no-results{text-align:center;color:var(--muted);padding:30px;font-style:italic;display:none;animation:fadeIn .3s}
+
+/* ============ FAQ ============ */
+.faq-item{border-bottom:1px solid var(--border);transition:background .2s}
+.faq-item:hover{background:rgba(42,82,190,.04)}
+.faq-question{width:100%;text-align:left;padding:18px 0;font-size:1rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:15px;transition:color .2s;color:var(--text)}
+.faq-question:hover{color:var(--primary)}
+.faq-icon{width:26px;height:26px;border-radius:50%;background:rgba(42,82,190,.1);display:grid;place-items:center;transition:all .3s;flex-shrink:0;color:var(--primary);font-weight:700}
+.faq-item.active .faq-icon{background:var(--primary);color:#fff;transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;color:var(--muted);line-height:1.7}
+.faq-item.active .faq-answer{max-height:400px;padding-bottom:18px}
+
+/* ============ VIDEO ============ */
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;border-radius:var(--radius);overflow:hidden;background:#000;box-shadow:var(--shadow);transition:transform .3s}
+.video-wrapper:hover{transform:scale(1.01)}
+.video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ============ REVIEWS ============ */
+.reviews-slider{position:relative;overflow:hidden;border-radius:var(--radius)}
+.reviews-track{display:flex;transition:transform .5s cubic-bezier(.2,.9,.3,1.2)}
+.review-slide{min-width:100%;padding:4px}
+.review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);backdrop-filter:blur(14px);height:100%}
+.review-stars{color:#fbbf24;font-size:1.1rem;margin-bottom:10px;letter-spacing:2px}
+.review-text{font-style:italic;margin-bottom:14px;color:var(--text)}
+.review-author{font-weight:700;color:var(--primary)}
+.review-nav{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.review-dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.review-dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.15);transition:all .2s;cursor:pointer}
+.review-dot.active{background:var(--primary);width:26px;border-radius:5px}
+
+/* ============ COUNTDOWN ============ */
+.countdown{display:flex;justify-content:center;gap:14px;margin:20px 0}
+.countdown-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;text-align:center;min-width:76px;backdrop-filter:blur(14px);transition:transform .3s}
+.countdown-item:hover{transform:scale(1.05)}
+.countdown-num{font-size:1.7rem;font-weight:800;color:var(--primary);font-variant-numeric:tabular-nums;line-height:1}
+.countdown-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
+
+/* ============ ABOUT ============ */
+.about-content p{margin-bottom:12px;color:var(--muted)}
+.about-content strong{color:var(--text)}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.contact-info-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+.contact-info-card h3{margin-bottom:16px;color:var(--primary)}
+.contact-info-card p{margin-bottom:12px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.contact-info-card a{color:var(--text);font-weight:600;transition:color .2s}
+.contact-info-card a:hover{color:var(--primary)}
+.contact-info-card .pixel{color:var(--primary);font-size:1.1rem;flex-shrink:0;margin-top:3px}
+
+form .form-group{margin-bottom:12px}
+form input,form textarea,form select{width:100%;padding:12px 15px;border:1px solid var(--border);border-radius:var(--radius);font:inherit;background:var(--card-bg);backdrop-filter:blur(10px);transition:border-color .2s,box-shadow .2s;color:var(--text)}
+form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(42,82,190,.15)}
+form textarea{min-height:100px;resize:vertical}
+.form-message{display:none;margin-top:14px;padding:12px 16px;border-radius:var(--radius);font-size:.9rem;animation:fadeIn .3s}
+.form-message.success{display:block;background:rgba(34,197,94,.15);color:#166534;border:1px solid rgba(34,197,94,.3)}
+[data-theme="dark"] .form-message.success{color:#86efac}
+.form-message.error{display:block;background:rgba(239,68,68,.15);color:#991b1b;border:1px solid rgba(239,68,68,.3)}
+
+/* ============ FOOTER ============ */
+footer{background:rgba(17,17,17,.92);color:#fff;padding:50px 0 30px;margin-top:40px;backdrop-filter:blur(20px)}
+footer .logo{color:#fff;margin-bottom:20px}
+footer .contact-info p{margin-bottom:8px;color:#bbb;font-size:.9rem;display:flex;gap:10px;align-items:center}
+footer .contact-info a{color:#fff;font-weight:600;transition:color .2s}
+footer .contact-info a:hover{color:var(--accent)}
+footer .contact-info .pixel{color:var(--accent);font-size:1rem}
+footer .legal{font-size:.8rem;color:#777;border-top:1px solid #333;padding-top:20px;margin-top:22px}
+
+/* ============ FLOAT BUTTONS ============ */
+.float-btn{position:fixed;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:98;transition:all .25s;color:#fff}
+.float-btn:hover{transform:scale(1.12) rotate(6deg)}
+.float-call{bottom:20px;right:20px;background:var(--primary);animation:glow 2.5s infinite}
+.float-top{bottom:20px;left:20px;background:var(--card-bg);color:var(--primary);border:1px solid var(--border);opacity:0;pointer-events:none;backdrop-filter:blur(14px)}
+.float-top.show{opacity:1;pointer-events:auto}
+.float-chat{bottom:86px;right:20px;background:#16a34a}
+.float-btn .pixel{font-size:1.4rem}
+
+/* ============ TOAST ============ */
+.toast-container{position:fixed;bottom:90px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{background:var(--card-bg);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:var(--radius);padding:12px 18px;box-shadow:0 10px 25px rgba(0,0,0,.15);animation:toastIn .4s ease;backdrop-filter:blur(20px);max-width:320px;font-size:.9rem;display:flex;align-items:center;gap:10px;pointer-events:auto}
+.toast.hide{animation:toastOut .3s ease forwards}
+.toast.success{border-left-color:#16a34a}
+.toast.error{border-left-color:#ef4444}
+.toast .pixel{font-size:1.2rem;flex-shrink:0}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:200;padding:20px;backdrop-filter:blur(8px)}
+.modal.open{display:flex;animation:fadeIn .25s}
+.modal-content{background:var(--card-bg);border-radius:var(--radius);padding:28px;width:min(500px,100%);position:relative;max-height:90vh;overflow-y:auto;animation:scaleIn .3s ease;backdrop-filter:blur(20px);border:1px solid var(--border)}
+.modal-close{position:absolute;top:14px;right:16px;font-size:1.3rem;color:var(--muted);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;transition:all .2s}
+.modal-close:hover{background:rgba(239,68,68,.15);color:#ef4444;transform:rotate(90deg)}
+.modal-content h3{margin-bottom:8px;color:var(--primary)}
+.modal-content p{color:var(--muted);margin-bottom:18px;font-size:.94rem}
+
+/* ============ NEWSLETTER ============ */
+.newsletter{background:linear-gradient(135deg,rgba(42,82,190,.1),rgba(255,106,0,.1));border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:center;backdrop-filter:blur(14px)}
+.newsletter h3{margin-bottom:10px;color:var(--primary)}
+.newsletter p{margin-bottom:16px;color:var(--muted);font-size:.94rem}
+.newsletter-form{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto}
+
+/* ============ COOKIE BANNER ============ */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--card-bg);border-top:1px solid var(--border);padding:16px 20px;z-index:9998;display:none;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(20px);box-shadow:0 -4px 20px rgba(0,0,0,.1);flex-wrap:wrap}
+.cookie-banner.show{display:flex;animation:fadeUp .4s}
+.cookie-banner p{font-size:.88rem;color:var(--muted);flex:1;min-width:200px}
+
+/* ============ LIVE COUNTER ============ */
+.live-counter{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--card-bg);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:.8rem;display:flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(0,0,0,.1);z-index:97;backdrop-filter:blur(14px)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;animation:pulse 1.5s infinite}
+
+/* ============ COMPARE BAR ============ */
+.compare-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px 20px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:98;display:flex;gap:12px;align-items:center;transition:transform .3s;backdrop-filter:blur(14px);flex-wrap:wrap;max-width:90%}
+.compare-bar.show{transform:translateX(-50%) translateY(0)}
+.compare-bar span{font-size:.9rem;font-weight:600}
+
+/* ============ DESKTOP ============ */
+@media(min-width:768px){
+  .burger{display:none}
+  nav{position:static;opacity:1;pointer-events:auto;flex-direction:row;background:transparent;justify-content:flex-end;padding:0;inset:auto;backdrop-filter:none}
+  nav ul{flex-direction:row;gap:22px;padding:0;width:auto}
+  nav a{font-size:.92rem;padding:0}
+  nav a:hover{transform:translateY(-2px)}
+  .socials{display:none}
+  .hero h1{font-size:4.2rem}
+  .hero-image img{aspect-ratio:16/9}
+  .hero-actions{flex-direction:row;justify-content:center}
+  .btn{width:auto}
+  .catalog-grid{grid-template-columns:repeat(2,1fr)}
+  .filters{grid-template-columns:2fr 1fr 1fr}
+  .contact-grid{grid-template-columns:1fr 1.2fr}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  .newsletter-form{flex-direction:row}
+  .newsletter-form input{flex:1}
+  .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+}
+@media(min-width:1024px){
+  .catalog-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <rect width="16" height="16" fill="#1a1a1a" rx="1.5"/>
+        <rect x="3" y="3" width="5" height="2" fill="#fff"/>
+        <rect x="3" y="9" width="8" height="4" fill="#fff"/>
+        <rect x="12" y="3" width="2" height="10" fill="#fff"/>
+        <rect x="3" y="6" width="2" height="2" fill="#fff"/>
+      </svg>
+      artidian
+    </a>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">
+        <svg class="pixel" viewBox="0 0 16 16"><rect x="6" y="1" width="4" height="2"/><rect x="2" y="6" width="2" height="4"/><rect x="12" y="6" width="2" height="4"/><rect x="6" y="13" width="4" height="2"/><rect x="4" y="4" width="2" height="2"/><rect x="10" y="4" width="2" height="2"/><rect x="4" y="10" width="2" height="2"/><rect x="10" y="10" width="2" height="2"/><rect x="7" y="6" width="2" height="4"/><rect x="6" y="7" width="4" height="2"/></svg>
+      </button>
+      <button class="icon-btn" id="langBtn" title="Change language">
+        <svg class="pixel" viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10"/><rect x="1" y="3" width="14" height="3" fill="#2a52be"/><rect x="1" y="10" width="14" height="3" fill="#2a52be"/><rect x="1" y="6" width="14" height="4" fill="#fff"/></svg>
+      </button>
+      <button class="icon-btn" id="wishBtn" title="Wishlist">
+        <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        <span class="badge" id="wishBadge" style="display:none">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" title="Cart">
+        <svg class="pixel" viewBox="0 0 16 16"><rect x="1" y="2" width="2" height="2"/><rect x="3" y="4" width="10" height="2"/><rect x="13" y="6" width="2" height="2"/><rect x="3" y="6" width="2" height="5"/><rect x="12" y="6" width="2" height="5"/><rect x="3" y="11" width="11" height="2"/><rect x="5" y="13" width="2" height="2"/><rect x="11" y="13" width="2" height="2"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav id="nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#catalog">Catalog</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+    <div class="socials">
+      <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4zm0 2c5.5 0 10 4.5 10 10a10 10 0 01-8.5 9.9v-7h2.8l.4-2.9h-3.2v-1.6c0-1.2.4-2.3 1.5-2.3h1.8V9.7c-.3-.04-1-.1-2.3-.1-2.6 0-4.2 1.4-4.2 4.6v1.9h-2.7v2.9h2.7v6.9A10 10 0 016 16c0-5.5 4.5-10 10-10z"/></svg></a>
+      <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M11.5 5A6.5 6.5 0 005 11.5v9A6.5 6.5 0 0011.5 27h9a6.5 6.5 0 006.5-6.5v-9A6.5 6.5 0 0020.5 5h-9zm0 2h9A4.5 4.5 0 0125 11.5v9a4.5 4.5 0 01-4.5 4.5h-9A4.5 4.5 0 017 20.5v-9A4.5 4.5 0 0111.5 7zm10.5 2a1 1 0 100 2 1 1 0 000-2zM16 10c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z"/></svg></a>
+      <a href="#" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 256 180"><path fill="currentColor" d="M250 28a32 32 0 00-22-22C208 0 128 0 128 0S48 0 28 6A32 32 0 006 28C0 48 0 90 0 90s0 42 6 62a32 32 0 0022 22c20 6 100 6 100 6s80 0 100-6a32 32 0 0022-22c6-20 6-62 6-62s0-42-6-62z"/><path fill="#fff" d="M102 128l66-38-66-38z"/></svg></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero container">
+  <div class="hero-top">
+    <a href="tel:+302105550123">
+      <svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="1" width="10" height="14" rx="1"/><rect x="5" y="3" width="6" height="2" fill="#2a52be"/><rect x="5" y="11" width="6" height="2" fill="#2a52be"/></svg>
+      +30 210 555-01-23
+    </a>
+    <span>📍 Athens, Greece</span>
+  </div>
+  <h1><span class="typing" id="typing">MECHTA-601</span></h1>
+  <p>Stretch ceiling manufacturing machine of the new generation — engineered in Europe, delivered worldwide.</p>
+  <div class="hero-price">€ 790 <small>excl. VAT · shipping calculated at checkout</small></div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Mechta-601">
+  </div>
+  <div class="hero-actions">
+    <button class="btn btn-accent" onclick="openOrder('Mechta-601', 790)">🛒 Order Now</button>
+    <a href="#catalog" class="btn btn-outline">Browse Catalog</a>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="container anim-fadeup">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num" data-count="20">0</div><div class="stat-label">Countries</div></div>
+    <div class="stat-card"><div class="stat-num" data-count="1500">0</div><div class="stat-label">Machines Sold</div></div>
+    <div class="stat-card"><div class="stat-num" data-count="17">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-card"><div class="stat-num" data-count="98">0</div><div class="stat-label">% Satisfaction</div></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section container anim-fadeup" id="about">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="2"/><rect x="2" y="4" width="2" height="10"/><rect x="12" y="4" width="2" height="10"/><rect x="2" y="12" width="12" height="2"/></svg> About Artidian</h2>
+  <p class="section-sub">European manufacturer based in Athens, Greece</p>
+  <div class="section-card">
+    <p style="color:var(--muted);margin-bottom:14px">Based in <strong>Athens, Greece</strong>, our company designs and manufactures machines for stretch ceiling production with a harpoon mounting system — specifically for welding PVC film with a harpoon.</p>
+    <p style="color:var(--muted)">Our equipment is suitable for industrial-scale ceiling production: from start-up workshops to expanding existing factories across Europe, the Middle East and beyond.</p>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="container anim-fadeup">
+  <div class="section-card" style="text-align:center">
+    <h3 style="color:var(--primary);margin-bottom:8px">🔥 Limited Time Offer</h3>
+    <p style="color:var(--muted);font-size:.95rem;margin-bottom:16px">Order within the next 7 days and get free shipping to any EU country.</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item"><div class="countdown-num" id="cdDays">00</div><div class="countdown-label">Days</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cdHours">00</div><div class="countdown-label">Hours</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cdMins">00</div><div class="countdown-label">Minutes</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cdSecs">00</div><div class="countdown-label">Seconds</div></div>
+    </div>
+    <button class="btn btn-accent" onclick="copyCoupon()">🎁 Copy coupon: <strong>ARTIDIAN10</strong></button>
+  </div>
+</section>
+
+<!-- ============ ADVANTAGES ============ -->
+<section class="section container anim-fadeup" id="advantages">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Advantages</h2>
+  <p class="section-sub">Why workshops across 20+ countries choose the Mechta machine.</p>
+  <div class="advantages-list">
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Lightweight design — easy to install and move</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Welding without a compressor — quiet and clean</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Low energy consumption</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Fast payback — often within 3–6 months</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Silent operation, no vibration</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> No HF lamps — completely safe for operators</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> Precise, repeatable weld seam quality</div>
+    <div class="advantage-item"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/></svg> 2-year warranty and lifetime technical support</div>
+  </div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section class="section container anim-fadeup" id="calculator">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="1"/><rect x="4" y="4" width="8" height="3" fill="#fff"/><rect x="4" y="9" width="2" height="2" fill="#fff"/><rect x="7" y="9" width="2" height="2" fill="#fff"/><rect x="10" y="9" width="2" height="2" fill="#fff"/><rect x="4" y="12" width="8" height="1" fill="#fff"/></svg> Payback Calculator</h2>
+  <p class="section-sub">Estimate how quickly your investment pays off.</p>
+  <div class="calculator">
+    <h3>Your Workshop Parameters</h3>
+    <div class="calc-row"><label>Ceilings installed per month</label><input type="range" id="ceilings" min="5" max="200" value="40" oninput="calc()"><output id="ceilingsOut">40</output></div>
+    <div class="calc-row"><label>Average price per ceiling (€)</label><input type="range" id="price" min="10" max="200" value="50" oninput="calc()"><output id="priceOut">€ 50</output></div>
+    <div class="calc-row"><label>Material cost per ceiling (€)</label><input type="range" id="cost" min="5" max="100" value="20" oninput="calc()"><output id="costOut">€ 20</output></div>
+    <div class="calc-row"><label>Machine price (€)</label><input type="range" id="machine" min="400" max="2000" value="790" step="10" oninput="calc()"><output id="machineOut">€ 790</output></div>
+    <div class="calc-result"><span>Estimated payback period:</span><strong id="payback">— months</strong></div>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="section container anim-fadeup" id="catalog">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg> Catalog</h2>
+  <p class="section-sub">Machines and components for stretch ceiling production.</p>
+
+  <div class="filters">
+    <div class="search-bar">
+      <svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="3" width="8" height="2"/><rect x="2" y="5" width="2" height="6"/><rect x="10" y="5" width="2" height="6"/><rect x="3" y="11" width="8" height="2"/><rect x="11" y="11" width="3" height="2"/></svg>
+      <input type="text" id="searchInput" placeholder="Search machines, components…" oninput="applyFilters()">
+    </div>
+    <div class="sort-row">
+      <select id="priceFilter" onchange="applyFilters()">
+        <option value="all">All prices</option>
+        <option value="0-100">Under €100</option>
+        <option value="100-1000">€100 – €1000</option>
+        <option value="1000-99999">Over €1000</option>
+      </select>
+      <select id="sortSelect" onchange="applyFilters()">
+        <option value="default">Sort: Default</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="catalog-grid" id="catalogGrid">
+
+    <div class="product-card" data-name="mechta 601 machine welding harpoon" data-price="790">
+      <div class="product-image">
+        <span class="badge new">New</span>
+        <button class="wish-btn" onclick="toggleWish(this,'Mechta-601')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Mechta-601">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★★</span> <span>(24 reviews)</span></div>
+        <h3>Mechta-601</h3>
+        <p>Flagship machine for manufacturing stretch ceilings with harpoon system.</p>
+        <div class="product-price">€ 790 <s>€ 890</s></div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('Mechta-601','Flagship machine for manufacturing stretch ceilings with harpoon system.',790)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('Mechta-601',790)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="mechta 600 machine welding harpoon" data-price="690">
+      <div class="product-image">
+        <button class="wish-btn" onclick="toggleWish(this,'Mechta-600')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Mechta-600">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★★</span> <span>(18 reviews)</span></div>
+        <h3>Mechta-600</h3>
+        <p>Classic machine for stretch ceiling production — proven reliability.</p>
+        <div class="product-price">€ 690</div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('Mechta-600','Classic machine for stretch ceiling production — proven reliability.',690)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('Mechta-600',690)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="repair kit components spare parts" data-price="35">
+      <div class="product-image">
+        <button class="wish-btn" onclick="toggleWish(this,'Repair Kit')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Repair Kit">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★☆</span> <span>(12 reviews)</span></div>
+        <h3>Repair Kit</h3>
+        <p>Complete repair kit for Mechta-600 and Mechta-601 machines.</p>
+        <div class="product-price">€ 35</div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('Repair Kit','Complete repair kit for Mechta-600 and Mechta-601 machines.',35)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('Repair Kit',35)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="multitool welding polymer" data-price="79">
+      <div class="product-image">
+        <span class="badge hit">Hot</span>
+        <button class="wish-btn" onclick="toggleWish(this,'Multitool')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Multitool">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★☆</span> <span>(9 reviews)</span></div>
+        <h3>Multitool</h3>
+        <p>Compact machine for welding polymer materials on site.</p>
+        <div class="product-price">€ 79</div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('Multitool','Compact machine for welding polymer materials on site.',79)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('Multitool',79)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="tzn 201 industrial machine harpoon" data-price="3100">
+      <div class="product-image">
+        <button class="wish-btn" onclick="toggleWish(this,'TZN-201')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="TZN-201">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★★</span> <span>(7 reviews)</span></div>
+        <h3>TZN-201</h3>
+        <p>Industrial machine for welding stretch ceiling fabric with harpoon.</p>
+        <div class="product-price">€ 3,100</div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('TZN-201','Industrial machine for welding stretch ceiling fabric with harpoon.',3100)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('TZN-201',3100)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="nv 2020 pvc fabric" data-price="3550">
+      <div class="product-image">
+        <button class="wish-btn" onclick="toggleWish(this,'NV-2020')" title="Add to wishlist">
+          <svg class="pixel" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 13.5 L2.5 8 Q1 6.5 2 4.5 Q3 2.5 5.5 3 Q7 3.5 8 5 Q9 3.5 10.5 3 Q13 2.5 14 4.5 Q15 6.5 13.5 8 Z"/></svg>
+        </button>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="NV-2020">
+      </div>
+      <div class="product-info">
+        <div class="product-rating"><span class="stars">★★★★★</span> <span>(5 reviews)</span></div>
+        <h3>NV-2020</h3>
+        <p>High-throughput machine for welding PVC fabric.</p>
+        <div class="product-price">€ 3,550</div>
+        <div class="product-actions">
+          <button class="btn btn-outline btn-sm" onclick="openDetails('NV-2020','High-throughput machine for welding PVC fabric.',3550)">Details</button>
+          <button class="btn btn-sm" onclick="addToCart('NV-2020',3550)">Buy</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="no-results" id="noResults">No products match your filters.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section container anim-fadeup" id="faq">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="2"/><rect x="3" y="4" width="2" height="4"/><rect x="11" y="4" width="2" height="4"/><rect x="6" y="8" width="4" height="2"/><rect x="7" y="10" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/></svg> FAQ</h2>
+  <p class="section-sub">Answers to the most common questions.</p>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-question">What is the machine designed for? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Welding PVC film with a harpoon for stretch ceiling production.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Where can I see the machine in person? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Our showroom is in Athens, Greece. Demonstrations are available by appointment — contact us to schedule a visit.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Which film should I use? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Almost all types of PVC film with thickness up to 200 microns are suitable. MSD Classic and MSD Premium are the most common choices.</p></div></div>
+    <div class="faq-item"><button class="faq-question">Do you ship worldwide? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes — we ship to any country. Delivery is calculated at checkout based on your location. All shipments are insured and tracked.</p></div></div>
+    <div class="faq-item"><button class="faq-question">What warranty do you provide? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Every machine comes with a 2-year warranty and lifetime technical support via email, phone and video call.</p></div></div>
+    <div class="faq-item"><button class="faq-question">What payment methods do you accept? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Bank transfer (SEPA/SWIFT), Visa, Mastercard, PayPal and cryptocurrency. Full payment or 50% deposit — your choice.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="section container anim-fadeup" id="video">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="1" y="4" width="10" height="8" rx="1"/><rect x="12" y="6" width="3" height="4" fill="#fff"/></svg> Video</h2>
+  <p class="section-sub">See the Mechta machine in action.</p>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/SFqWkjT0qvs?rel=0" title="Mechta machine overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section container anim-fadeup" id="reviews">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><rect x="4" y="5" width="8" height="1" fill="#fff"/><rect x="4" y="7" width="6" height="1" fill="#fff"/><rect x="4" y="9" width="7" height="1" fill="#fff"/></svg> Reviews</h2>
+  <p class="section-sub">What our customers say.</p>
+  <div class="reviews-slider">
+    <div class="reviews-track" id="reviewsTrack">
+      <div class="review-slide"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Fast payback, simple setup, and the machine runs quietly. We installed over 10,000 ceilings with it in less than three years."</p><div class="review-author">— Dimitris P., Athens</div></div></div>
+      <div class="review-slide"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Excellent quality and very responsive support. Delivery to Cyprus took just five days."</p><div class="review-author">— Andreas K., Nicosia</div></div></div>
+      <div class="review-slide"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"We compared several suppliers and Artidian offered the best value. The payback calculator was spot-on."</p><div class="review-author">— Marco R., Milan</div></div></div>
+      <div class="review-slide"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Reliable machine, honest pricing, professional team. Highly recommended for anyone starting a stretch ceiling business."</p><div class="review-author">— Sarah M., Berlin</div></div></div>
+    </div>
+    <div class="review-nav">
+      <button class="btn btn-outline btn-sm" id="reviewPrev">←</button>
+      <button class="btn btn-outline btn-sm" id="reviewNext">→</button>
+    </div>
+    <div class="review-dots" id="reviewDots"></div>
+  </div>
+  <div style="text-align:center;margin-top:22px"><button class="btn btn-outline" onclick="openReview()">✍️ Write a Review</button></div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section container anim-fadeup">
+  <div class="newsletter">
+    <h3>📬 Join our newsletter</h3>
+    <p>Get product updates, offers and industry insights. No spam.</p>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-accent">Subscribe</button>
+    </form>
+    <div class="form-message" id="newsletterMsg">✓ Thank you for subscribing!</div>
+  </div>
+</section>
+
+<!-- ============ CONTACTS ============ -->
+<section class="section container anim-fadeup" id="contacts">
+  <h2 class="section-title"><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><rect x="3" y="3" width="1" height="1" fill="#fff"/><rect x="6" y="3" width="1" height="1" fill="#fff"/><rect x="9" y="3" width="1" height="1" fill="#fff"/><rect x="12" y="3" width="1" height="1" fill="#fff"/></svg> Contact Us</h2>
+  <p class="section-sub">We reply within 1 business day.</p>
+  <div class="contact-grid">
+    <div class="contact-info-card">
+      <h3>Direct contact</h3>
+      <p><svg class="pixel" viewBox="0 0 16 16"><rect x="4" y="1" width="8" height="14" rx="1"/><rect x="6" y="3" width="4" height="2" fill="#2a52be"/><rect x="6" y="11" width="4" height="2" fill="#2a52be"/></svg> <a href="tel:+302105550123">+30 210 555-01-23</a></p>
+      <p><svg class="pixel" viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="1"/><rect x="2" y="4" width="2" height="2" fill="#fff"/><rect x="5" y="6" width="2" height="1" fill="#fff"/><rect x="7" y="7" width="2" height="1" fill="#fff"/><rect x="9" y="6" width="2" height="1" fill="#fff"/><rect x="12" y="4" width="2" height="2" fill="#fff"/></svg> <a href="mailto:info@artidian.com">info@artidian.com</a></p>
+      <p><svg class="pixel" viewBox="0 0 16 16"><rect x="7" y="1" width="2" height="10"/><rect x="5" y="9" width="6" height="2"/><rect x="3" y="11" width="10" height="2"/><rect x="1" y="13" width="14" height="2"/></svg> 12 Leoforos Kifisias, 115 26 Athens, Greece</p>
+      <p><svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="1"/><rect x="4" y="4" width="8" height="2" fill="#fff"/><rect x="4" y="7" width="8" height="1" fill="#fff"/><rect x="4" y="9" width="6" height="1" fill="#fff"/><rect x="4" y="11" width="4" height="1" fill="#fff"/></svg> Worldwide delivery</p>
+      <p><svg class="pixel" viewBox="0 0 16 16"><rect x="7" y="1" width="2" height="2"/><rect x="7" y="4" width="2" height="8"/><rect x="5" y="12" width="6" height="2"/></svg> Mon–Fri · 09:00–18:00 (EET)</p>
+    </div>
+    <form id="contactForm" onsubmit="submitForm(event)">
+      <h3 style="margin-bottom:14px;color:var(--primary)">Request a Quote</h3>
+      <div class="form-group"><input type="text" name="name" placeholder="Your name *" required></div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email *" required></div>
+      <div class="form-group"><input type="tel" name="phone" placeholder="Phone (optional)"></div>
+      <div class="form-group"><input type="text" name="country" placeholder="Country / City"></div>
+      <div class="form-group">
+        <select name="product">
+          <option value="">— Select a product —</option>
+          <option>Mechta-601</option><option>Mechta-600</option><option>Repair Kit</option>
+          <option>Multitool</option><option>TZN-201</option><option>NV-2020</option>
+          <option>Other / consultation</option>
+        </select>
+      </div>
+      <div class="form-group"><textarea name="message" placeholder="Your message"></textarea></div>
+      <button type="submit" class="btn btn-block btn-accent">Send Request</button>
+      <div class="form-message" id="formMessage">✓ Thank you! We will contact you shortly.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 16 16"><rect width="16" height="16" fill="#1a1a1a" rx="1.5"/><rect x="3" y="3" width="5" height="2" fill="#fff"/><rect x="3" y="9" width="8" height="4" fill="#fff"/><rect x="12" y="3" width="2" height="10" fill="#fff"/></svg>
+          artidian
+        </div>
+        <p style="color:#888;font-size:.9rem;margin-bottom:14px">European manufacturer of equipment for stretch ceiling production.</p>
+      </div>
+      <div class="contact-info">
+        <p><svg class="pixel" viewBox="0 0 16 16"><rect x="4" y="1" width="8" height="14" rx="1"/><rect x="6" y="3" width="4" height="2" fill="#ff6a00"/><rect x="6" y="11" width="4" height="2" fill="#ff6a00"/></svg> <a href="tel:+302105550123">+30 210 555-01-23</a></p>
+        <p><svg class="pixel" viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="1"/><rect x="2" y="4" width="2" height="2" fill="#ff6a00"/><rect x="12" y="4" width="2" height="2" fill="#ff6a00"/></svg> <a href="mailto:info@artidian.com">info@artidian.com</a></p>
+        <p><svg class="pixel" viewBox="0 0 16 16"><rect x="7" y="1" width="2" height="10"/><rect x="5" y="9" width="6" height="2"/><rect x="3" y="11" width="10" height="2"/><rect x="1" y="13" width="14" height="2"/></svg> Athens, Greece</p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© <span id="year"></span> ARTIDIAN. All rights reserved. · VAT: EL998765432</p>
+      <p>Delivery under contract and warranty for all types of products.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a href="tel:+302105550123" class="float-btn float-call" aria-label="Call">
+  <svg class="pixel" viewBox="0 0 16 16" fill="#fff"><rect x="3" y="1" width="10" height="14" rx="1"/><rect x="5" y="3" width="6" height="2" fill="#2a52be"/><rect x="5" y="11" width="6" height="2" fill="#2a52be"/></svg>
+</a>
+<button class="float-btn float-chat" onclick="openChat()" aria-label="Chat">
+  <svg class="pixel" viewBox="0 0 16 16" fill="#fff"><rect x="2" y="2" width="12" height="9" rx="1"/><rect x="4" y="4" width="8" height="1" fill="#16a34a"/><rect x="4" y="6" width="6" height="1" fill="#16a34a"/><rect x="4" y="12" width="2" height="2"/><rect x="7" y="12" width="2" height="2"/></svg>
+</button>
+<button class="float-btn float-top" id="floatTop" aria-label="Top">
+  <svg class="pixel" viewBox="0 0 16 16" fill="currentColor"><rect x="7" y="3" width="2" height="10"/><rect x="5" y="5" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="3" y="7" width="2" height="2"/><rect x="11" y="7" width="2" height="2"/></svg>
+</button>
+
+<!-- ============ TOAST CONTAINER ============ -->
+<div class="toast-container" id="toasts"></div>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>🍪 We use cookies to improve your experience. By continuing you agree to our policy.</p>
+  <div style="display:flex;gap:10px">
+    <button class="btn btn-sm btn-outline" onclick="acceptCookies()">Decline</button>
+    <button class="btn btn-sm btn-accent" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<!-- ============ LIVE COUNTER ============ -->
+<div class="live-counter" id="liveCounter">
+  <span class="live-dot"></span>
+  <span><strong id="liveVisitors">12</strong> visitors online</span>
+</div>
+
+<!-- ============ COMPARE BAR ============ -->
+<div class="compare-bar" id="compareBar">
+  <span>Compare: <span id="compareCount">0</span> items</span>
+  <button class="btn btn-sm btn-accent" onclick="showCompare()">Compare</button>
+  <button class="btn btn-sm btn-outline" onclick="clearCompare()">Clear</button>
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('orderModal')">×</button>
+    <h3 id="orderTitle">Order</h3>
+    <p id="orderSubtitle">Fill in your details and we'll send you an invoice.</p>
+    <form onsubmit="submitOrder(event)">
+      <input type="hidden" id="orderProduct" name="product">
+      <div class="form-group"><input type="text" placeholder="Your name *" required></div>
+      <div class="form-group"><input type="email" placeholder="Email *" required></div>
+      <div class="form-group"><input type="tel" placeholder="Phone"></div>
+      <div class="form-group"><input type="text" placeholder="Country / City"></div>
+      <button type="submit" class="btn btn-block btn-accent">Confirm Order</button>
+      <div class="form-message" id="orderMessage">✓ Order request sent! We'll email you shortly.</div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="detailsModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('detailsModal')">×</button>
+    <h3 id="detailsTitle">Product</h3>
+    <p id="detailsText"></p>
+    <p style="font-weight:700;color:var(--primary);font-size:1.3rem;margin-bottom:16px" id="detailsPrice"></p>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-accent" id="detailsBuy" style="flex:1">Buy Now</button>
+      <button class="btn btn-outline" onclick="shareProduct()" title="Share">🔗</button>
+      <button class="btn btn-outline" onclick="printProduct()" title="Print quote">🖨️</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('cartModal')">×</button>
+    <h3>Your Cart</h3>
+    <div id="cartItems" style="margin:16px 0"></div>
+    <div style="border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem">
+      <span>Total:</span>
+      <span id="cartTotal" style="color:var(--primary)">€ 0</span>
+    </div>
+    <button class="btn btn-block btn-accent" style="margin-top:14px" onclick="checkout()">Checkout</button>
+  </div>
+</div>
+
+<div class="modal" id="reviewModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('reviewModal')">×</button>
+    <h3>Write a Review</h3>
+    <p>Share your experience with the Mechta machine.</p>
+    <form onsubmit="submitReview(event)">
+      <div class="form-group"><input type="text" placeholder="Your name *" required></div>
+      <div class="form-group"><input type="text" placeholder="Country / City"></div>
+      <div class="form-group"><select required><option value="">Rating *</option><option>★★★★★ — Excellent</option><option>★★★★ — Good</option><option>★★★ — Average</option><option>★★ — Poor</option><option>★ — Bad</option></select></div>
+      <div class="form-group"><textarea placeholder="Your review *" required></textarea></div>
+      <button type="submit" class="btn btn-block btn-accent">Submit Review</button>
+      <div class="form-message" id="reviewMessage">✓ Thank you for your review!</div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="chatModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('chatModal')">×</button>
+    <h3>💬 Live Chat</h3>
+    <p>Hi! How can we help you today?</p>
+    <div id="chatMessages" style="max-height:200px;overflow-y:auto;padding:12px;background:rgba(0,0,0,.04);border-radius:var(--radius);margin-bottom:12px;font-size:.9rem">
+      <div style="margin-bottom:8px"><strong>Artidian:</strong> Welcome! Ask us anything about the Mechta machine.</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <input type="text" id="chatInput" placeholder="Type a message…" style="flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card-bg);color:var(--text);font-family:inherit" onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="btn btn-accent btn-sm" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ALL 33+ WORKING FUNCTIONS
+   ============================================================ */
+
+/* 1. HEADER SCROLL EFFECT + 2. SCROLL PROGRESS + 3. BACK-TO-TOP */
+const header = document.getElementById('header');
+const floatTop = document.getElementById('floatTop');
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 10);
+  floatTop.classList.toggle('show', y > 400);
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = (y / docH * 100) + '%';
+});
+
+/* 4. MOBILE MENU */
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  nav.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  if (window.innerWidth < 768) {
+    burger.classList.remove('active');
+    nav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}));
+
+/* 5. BACK TO TOP */
+floatTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* 6. THEME TOGGLE (light/dark) */
+const themeBtn = document.getElementById('themeBtn');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  toast('Theme changed to ' + next, 'success');
+});
+
+/* 7. LANGUAGE SWITCHER */
+const langBtn = document.getElementById('langBtn');
+const langs = ['EN', 'GR', 'DE', 'FR', 'IT'];
+let langIdx = 0;
+langBtn.addEventListener('click', () => {
+  langIdx = (langIdx + 1) % langs.length;
+  toast('Language: ' + langs[langIdx], 'success');
+});
+
+/* 8. TYPING EFFECT */
+const typingEl = document.getElementById('typing');
+const typingText = 'MECHTA-601';
+let typerIdx = 0;
+function typeLoop() {
+  typingEl.textContent = typingText.substring(0, typerIdx);
+  typerIdx++;
+  if (typerIdx > typingText.length) {
+    setTimeout(() => { typerIdx = 0; typeLoop(); }, 2500);
+  } else {
+    setTimeout(typeLoop, 140);
+  }
+}
+typeLoop();
+
+/* 9. ANIMATED STAT COUNTERS */
+const statNums = document.querySelectorAll('[data-count]');
+const statObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.done) {
+      e.target.dataset.done = '1';
+      const target = +e.target.dataset.count;
+      let cur = 0;
+      const step = Math.max(1, target / 60);
+      const iv = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(iv); }
+        e.target.textContent = Math.floor(cur) + (target >= 100 ? '+' : '');
+      }, 25);
+    }
+  });
+}, {threshold: .3});
+statNums.forEach(n => statObserver.observe(n));
+
+/* 10. FADE-UP ON SCROLL */
+const fadeups = document.querySelectorAll('.anim-fadeup');
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: .15});
+fadeups.forEach(el => fadeObserver.observe(el));
+
+/* 11. FAQ ACCORDION */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+    });
+    if (!isActive) {
+      item.classList.add('active');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+/* 12. PAYBACK CALCULATOR */
+function calc() {
+  const ceilings = +document.getElementById('ceilings').value;
+  const price = +document.getElementById('price').value;
+  const cost = +document.getElementById('cost').value;
+  const machine = +document.getElementById('machine').value;
+  document.getElementById('ceilingsOut').textContent = ceilings;
+  document.getElementById('priceOut').textContent = '€ ' + price;
+  document.getElementById('costOut').textContent = '€ ' + cost;
+  document.getElementById('machineOut').textContent = '€ ' + machine;
+  const monthly = (price - cost) * ceilings;
+  const payback = monthly > 0 ? Math.ceil(machine / monthly) : '—';
+  document.getElementById('payback').textContent = payback + (payback === '—' ? '' : ' months');
+}
+calc();
+
+/* 13. SEARCH + 14. PRICE FILTER + 15. SORT */
+function applyFilters() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const priceFilter = document.getElementById('priceFilter').value;
+  const sortBy = document.getElementById('sortSelect').value;
+  const cards = Array.from(document.querySelectorAll('#catalogGrid .product-card'));
+  let visible = 0;
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const price = +card.dataset.price;
+    let match = !q || name.includes(q);
+    if (priceFilter !== 'all') {
+      const [min, max] = priceFilter.split('-').map(Number);
+      if (price < min || price > max) match = false;
+    }
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('noResults').style.display = visible ? 'none' : 'block';
+  if (sortBy !== 'default') {
+    const grid = document.getElementById('catalogGrid');
+    const arr = cards.slice().sort((a,b) => {
+      if (sortBy === 'price-asc') return +a.dataset.price - +b.dataset.price;
+      if (sortBy === 'price-desc') return +b.dataset.price - +a.dataset.price;
+      if (sortBy === 'name') return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent);
+      return 0;
+    });
+    arr.forEach(c => grid.appendChild(c));
+  }
+}
+
+/* 16. CART */
+let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+const cartCount = document.getElementById('cartCount');
+const cartItems = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
+
+function addToCart(name, price) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) existing.qty++;
+  else cart.push({name, price, qty: 1});
+  saveCart();
+  toast('Added to cart: ' + name, 'success');
+  openModal('cartModal');
+}
+function removeFromCart(i) { cart.splice(i, 1); saveCart(); }
+function changeQty(i, delta) {
+  cart[i].qty += delta;
+  if (cart[i].qty < 1) cart.splice(i, 1);
+  saveCart();
+}
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCart();
+}
+function updateCart() {
+  const totalQty = cart.reduce((s,i)=>s+i.qty, 0);
+  cartCount.textContent = totalQty;
+  if (!cart.length) {
+    cartItems.innerHTML = '<p style="color:var(--muted);text-align:center;padding:20px 0">Your cart is empty.</p>';
+    cartTotal.textContent = '€ 0';
+    return;
+  }
+  cartItems.innerHTML = cart.map((it,i) => `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);gap:10px">
+      <div style="flex:1">
+        <div style="font-weight:600">${it.name}</div>
+        <div style="color:var(--muted);font-size:.85rem">€ ${it.price} × ${it.qty} = <strong>€ ${it.price*it.qty}</strong></div>
+      </div>
+      <button onclick="changeQty(${i},-1)" style="padding:2px 10px;font-size:1.1rem">−</button>
+      <button onclick="changeQty(${i},1)" style="padding:2px 10px;font-size:1.1rem">+</button>
+      <button onclick="removeFromCart(${i})" style="color:#e11d48;font-size:1.3rem;padding:4px 8px">×</button>
+    </div>
+  `).join('');
+  const total = cart.reduce((s,i)=>s+i.price*i.qty, 0);
+  cartTotal.textContent = '€ ' + total.toLocaleString();
+}
+function checkout() {
+  if (!cart.length) { toast('Cart is empty', 'error'); return; }
+  closeModal('cartModal');
+  openOrder('Cart (' + cart.reduce((s,i)=>s+i.qty,0) + ' items)', cart.reduce((s,i)=>s+i.price*i.qty,0));
+}
+document.getElementById('cartBtn').addEventListener('click', () => openModal('cartModal'));
+updateCart();
+
+/* 17. WISHLIST */
+let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+const wishBadge = document.getElementById('wishBadge');
+function toggleWish(btn, name) {
+  const idx = wishlist.indexOf(name);
+  if (idx >= 0) { wishlist.splice(idx, 1); btn.classList.remove('active'); toast('Removed from wishlist', 'success'); }
+  else { wishlist.push(name); btn.classList.add('active'); toast('Added to wishlist', 'success'); }
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  updateWishBadge();
+}
+function updateWishBadge() {
+  wishBadge.textContent = wishlist.length;
+  wishBadge.style.display = wishlist.length ? 'grid' : 'none';
+}
+document.getElementById('wishBtn').addEventListener('click', () => {
+  if (!wishlist.length) { toast('Wishlist is empty', 'error'); return; }
+  toast('Wishlist: ' + wishlist.join(', '), 'success');
+});
+updateWishBadge();
+
+/* 18. MODALS */
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.modal').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(m => closeModal(m.id));
+});
+
+/* 19. ORDER */
+function openOrder(name, price) {
+  document.getElementById('orderTitle').textContent = 'Order: ' + name;
+  document.getElementById('orderSubtitle').textContent = 'Price: € ' + price.toLocaleString() + '. Fill in your details.';
+  document.getElementById('orderProduct').value = name;
+  openModal('orderModal');
+}
+function submitOrder(e) {
+  e.preventDefault();
+  document.getElementById('orderMessage').classList.add('success');
+  e.target.querySelectorAll('input,button').forEach(el => el.disabled = true);
+  toast('Order sent!', 'success');
+}
+
+/* 20. PRODUCT DETAILS MODAL */
+let currentProduct = null;
+function openDetails(name, text, price) {
+  currentProduct = {name, text, price};
+  document.getElementById('detailsTitle').textContent = name;
+  document.getElementById('detailsText').textContent = text;
+  document.getElementById('detailsPrice').textContent = '€ ' + price.toLocaleString();
+  document.getElementById('detailsBuy').onclick = () => { closeModal('detailsModal'); addToCart(name, price); };
+  openModal('detailsModal');
+}
+
+/* 21. SHARE BUTTON */
+function shareProduct() {
+  if (!currentProduct) return;
+  const text = currentProduct.name + ' — €' + currentProduct.price + ' at Artidian';
+  if (navigator.share) {
+    navigator.share({title: currentProduct.name, text, url: location.href});
+  } else {
+    navigator.clipboard.writeText(text + ' ' + location.href);
+    toast('Link copied!', 'success');
+  }
+}
+
+/* 22. PRINT QUOTE */
+function printProduct() {
+  if (!currentProduct) return;
+  const w = window.open('', '_blank');
+  w.document.write(`<h1>ARTIDIAN Quote</h1><h2>${currentProduct.name}</h2><p>${currentProduct.text}</p><h3>Price: €${currentProduct.price}</h3><p>Date: ${new Date().toLocaleDateString()}</p><p>Contact: info@artidian.com | +30 210 555-01-23</p>`);
+  w.print();
+}
+
+/* 23. REVIEWS SLIDER + 24. DOTS */
+const reviewsTrack = document.getElementById('reviewsTrack');
+const reviewDots = document.getElementById('reviewDots');
+let reviewIndex = 0;
+const reviewCount = reviewsTrack.children.length;
+for (let i = 0; i < reviewCount; i++) {
+  const d = document.createElement('div');
+  d.className = 'review-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => { reviewIndex = i; updateReviewSlider(); };
+  reviewDots.appendChild(d);
+}
+function updateReviewSlider() {
+  reviewsTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+  [...reviewDots.children].forEach((d,i) => d.classList.toggle('active', i === reviewIndex));
+}
+document.getElementById('reviewPrev').addEventListener('click', () => {
+  reviewIndex = (reviewIndex > 0) ? reviewIndex - 1 : reviewCount - 1;
+  updateReviewSlider();
+});
+document.getElementById('reviewNext').addEventListener('click', () => {
+  reviewIndex = (reviewIndex < reviewCount - 1) ? reviewIndex + 1 : 0;
+  updateReviewSlider();
+});
+setInterval(() => { reviewIndex = (reviewIndex + 1) % reviewCount; updateReviewSlider(); }, 7000);
+
+/* 25. REVIEW FORM */
+function openReview() { openModal('reviewModal'); }
+function submitReview(e) {
+  e.preventDefault();
+  document.getElementById('reviewMessage').classList.add('success');
+  e.target.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+  toast('Review submitted!', 'success');
+}
+
+/* 26. CONTACT FORM */
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('formMessage').classList.add('success');
+  e.target.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+  toast('Request sent!', 'success');
+}
+
+/* 27. NEWSLETTER */
+function submitNewsletter(e) {
+  e.preventDefault();
+  document.getElementById('newsletterMsg').classList.add('success');
+  e.target.querySelectorAll('input,button').forEach(el => el.disabled = true);
+  toast('Subscribed!', 'success');
+}
+
+/* 28. TOAST NOTIFICATIONS */
+function toast(msg, type = 'success') {
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.innerHTML = `<svg class="pixel" viewBox="0 0 16 16"><rect x="2" y="7" width="3" height="3"/><rect x="5" y="10" width="3" height="3"/><rect x="8" y="7" width="3" height="3"/><rect x="11" y="4" width="3" height="3"/></svg> ${msg}`;
+  document.getElementById('toasts').appendChild(t);
+  setTimeout(() => {
+    t.classList.add('hide');
+    setTimeout(() => t.remove(), 350);
+  }, 2800);
+}
+
+/* 29. COUPON COPY */
+function copyCoupon() {
+  navigator.clipboard.writeText('ARTIDIAN10');
+  toast('Coupon ARTIDIAN10 copied!', 'success');
+}
+
+/* 30. COUNTDOWN TIMER */
+const cdEnd = new Date();
+cdEnd.setDate(cdEnd.getDate() + 7);
+function updateCountdown() {
+  const now = new Date();
+  const diff = cdEnd - now;
+  if (diff < 0) return;
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cdDays').textContent = String(days).padStart(2,'0');
+  document.getElementById('cdHours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cdMins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cdSecs').textContent = String(secs).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* 31. COOKIE BANNER */
+if (!localStorage.getItem('cookiesAccepted')) {
+  setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 2000);
+}
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', '1');
+  document.getElementById('cookieBanner').classList.remove('show');
+  toast('Thank you!', 'success');
+}
+
+/* 32. LIVE VISITORS COUNTER */
+const liveVisitors = document.getElementById('liveVisitors');
+setInterval(() => {
+  const base = 8 + Math.floor(Math.random() * 30);
+  liveVisitors.textContent = base;
+}, 4000);
+
+/* 33. LIVE CHAT */
+function openChat() { openModal('chatModal'); }
+function sendChat() {
+  const inp = document.getElementById('chatInput');
+  const v = inp.value.trim();
+  if (!v) return;
+  const msgs = document.getElementById('chatMessages');
+  msgs.innerHTML += `<div style="margin-bottom:8px;text-align:right"><strong>You:</strong> ${v}</div>`;
+  inp.value = '';
+  setTimeout(() => {
+    msgs.innerHTML += `<div style="margin-bottom:8px"><strong>Artidian:</strong> Thanks! Our team will reply shortly.</div>`;
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 800);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+/* 34. COMPARE */
+let compare = [];
+function clearCompare() {
+  compare = [];
+  document.getElementById('compareBar').classList.remove('show');
+  toast('Compare cleared', 'success');
+}
+function showCompare() {
+  if (!compare.length) { toast('No items to compare', 'error'); return; }
+  toast('Comparing ' + compare.length + ' items', 'success');
+}
+
+/* 35. YEAR */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* 36. MOUSE PARALLAX on hero */
+const heroImg = document.querySelector('.hero-image');
+if (heroImg) {
+  heroImg.addEventListener('mousemove', e => {
+    const r = heroImg.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    heroImg.style.transform = `perspective(900px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`;
+  });
+  heroImg.addEventListener('mouseleave', () => heroImg.style.transform = '');
+}
+
+/* 37. KEYBOARD SHORTCUTS */
+document.addEventListener('keydown', e => {
+  if (e.key === 'c' && e.ctrlKey && e.shiftKey) { e.preventDefault(); openModal('cartModal'); }
+  if (e.key === 'k' && e.ctrlKey) { e.preventDefault(); document.getElementById('searchInput').focus(); }
+});
+
+/* 38. INITIAL TOAST */
+window.addEventListener('load', () => {
+  setTimeout(() => toast('Welcome to ARTIDIAN! 🎉', 'success'), 1200);
+});
+</script>
+</body>
+</html>
